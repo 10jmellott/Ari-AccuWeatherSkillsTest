@@ -22,7 +22,7 @@ In order to accomplish this, in conversation with a strategic architect the firs
 ## Technical Requirements
 
 * Asp.NET Core Web App
-    * .NET 5 preferred
+    * .NET 6 preferred
     * MVC Preferred but any variation acceptable
 * AccuWeather REST API Integration
     * API Key: Provided by AccuWeather on request
