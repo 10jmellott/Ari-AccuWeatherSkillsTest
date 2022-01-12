@@ -28,6 +28,7 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Core
 		{
 			throw new NotImplementedException("GetAccuWeatherApiAsync is not implemented");
 			// TODO: Make an API call from the path & query parameters provided
+			// Should use _HttpClientFactory.CreateClient() to create a new HttpClient
 		}
 	}
 }
