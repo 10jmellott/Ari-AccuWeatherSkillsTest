@@ -83,7 +83,7 @@ These modules are the UI components that will make up your website or page. You 
 
 ## Template Project
 
-This project is provided to you to use as a baseline for accessing AccuWeather data
+This project is provided to you to use as a baseline for accessing AccuWeather data. This section is intentionally left blank to force you to review the code and understand it. That said, there are several key 'TODO' statements within the code to guide some of your beginning steps that need to happen.
 
 ## Delivery Requirements
 
