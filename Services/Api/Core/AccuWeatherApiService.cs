@@ -1,11 +1,3 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Linq;
-using System.Net.Http;
-using System.Text.Json;
-using System.Threading.Tasks;
-
 namespace AccuWeather.Web.SkillsTest.Services.Api.Core
 {
 	public class AccuWeatherApiService : IAccuWeatherApiService

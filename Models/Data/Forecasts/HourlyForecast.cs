@@ -1,5 +1,4 @@
 using AccuWeather.Web.SkillsTest.Models.Data.Core;
-using System;
 
 namespace AccuWeather.Web.SkillsTest.Models.Data.Forecasts
 {

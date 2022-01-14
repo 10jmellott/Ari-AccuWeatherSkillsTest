@@ -1,15 +1,14 @@
-using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Text.Encodings.Web;
 
 namespace AccuWeather.Web.SkillsTest.TagHelpers
 {
 	[HtmlTargetElement("accuweather-logo", TagStructure = TagStructure.NormalOrSelfClosing)]
 	public class AccuWeatherLogoTagHelper : TagHelper
 	{
-		public int? Width { get; set; }
-
 		public int? Height { get; set; }
+		public int? Width { get; set; }
 
 		public override void Process(TagHelperContext context, TagHelperOutput output)
 		{

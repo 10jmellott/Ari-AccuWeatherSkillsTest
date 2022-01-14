@@ -1,5 +1,3 @@
-using System;
-
 namespace AccuWeather.Web.SkillsTest.Models.Data.Alerts
 {
 	public class AlertArea

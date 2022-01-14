@@ -1,7 +1,5 @@
 using AccuWeather.Web.SkillsTest.Models.Data.Locations;
 using AccuWeather.Web.SkillsTest.Services.Api.Core;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace AccuWeather.Web.SkillsTest.Services.Api.Locations
 {

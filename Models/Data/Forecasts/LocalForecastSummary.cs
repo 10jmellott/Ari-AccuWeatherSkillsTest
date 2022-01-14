@@ -1,5 +1,3 @@
-using System;
-
 namespace AccuWeather.Web.SkillsTest.Models.Data.Forecasts
 {
 	public class LocalForecastSummary

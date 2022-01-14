@@ -1,7 +1,5 @@
 using AccuWeather.Web.SkillsTest.Models.Data.CurrentConditions;
 using AccuWeather.Web.SkillsTest.Services.Api.Core;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AccuWeather.Web.SkillsTest.Services.Api.CurrentConditions
 {
