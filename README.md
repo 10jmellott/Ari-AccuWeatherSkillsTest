@@ -1,16 +1,18 @@
 # AccuWeather Web Team Skills Test
 
+[Google Docs Documentation](https://docs.google.com/document/d/1NKpkFAdlGJFXmX-624tpQ3hrfXNQSt3njUEf9zJEFEg/edit?usp=sharing)
+
 This skills test is created by joshua.mellott@accuweather.com and ryan.krinjeck@accuweather.com in order to accurately assess the skill set behind a candidate applying to the AccuWeather web team. We expect this test will take approximately 1 to 2 hours and we hope that you can enjoy the time spent while creating it.
 
 These are very real challenges and data that the web development teams work with and would be similar to what you would be performing alongside the rest of the team here at AccuWeather.
 
-Please do not hesitate to reach out to us with any questions!
+Please do not hesitate to reach out to us with any questions, especially any with how to use the AccuWeather API!
 
 ## Summary
 
 As AccuWeather, we would like to provide a lightweight web application with key weather information so that users on lower end devices or simply users that don’t engage for long periods of time on the website can be provided with the fastest experience possible with the lowest overhead possible to AccuWeather.
 
-In order to accomplish this, in conversation with a strategic architect the first steps to this are building a page using Asp.NET Core with limited client-side JavaScript, Css, & HTML. We will need to make API calls to the AccuWeather REST API for several different categories that should fill out the needs of the following User Stories.
+In order to accomplish this, in conversation with a strategic architect the first steps to this are building a page using Asp.NET Core with limited client-side JavaScript, CSS, & HTML. We will need to make API calls to the AccuWeather REST API for several different categories that should fill out the needs of the following User Stories.
 
 ### User Stories
 
@@ -29,14 +31,13 @@ In order to accomplish this, in conversation with a strategic architect the firs
 
 ### API Interface Requirements
 
-* Use a NuGet package for resilience and fault tolerance setup such as [Polly](https://github.com/App-vNext/Polly)
+* Use a NuGet package for resilience and fault tolerance setup
 * Create a singleton service and register it through Asp.NET Core’s dependency injection methods so it can be used by your user interface
-* Dependency Injection to the Razor
 * Data should be pulled exclusively in the backend to make this widget lightweight
 
 ### API Documentation
 
-Note: The API Key listed above is only valid for the following APIs
+Note: The API Key listed above is only valid for the following APIs. Note that the API key provided is not set up to work as a general key and you cannot test the API on the reported pages, but you can confirm them using the same path & query parameters against apidev.accuweather.com.
 
 * [Documentation Home](https://developer.accuweather.com/)
 * [Location Search API](https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/search)
@@ -56,7 +57,7 @@ Note: The API Key listed above is only valid for the following APIs
 
 ### Design Modules
 
-These modules are the UI components that will make up your website or page. You may place all of these components on a single page, or create multiple pages for each module. We strongly suggest using  [Razor View Components](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-5.0) for reusability of your UI components.
+These modules are the UI components that will make up your website or page. You may place some or all of these components on a single or multiple pages. We strongly suggest using [Razor View Components](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-6.0) for reusability of your UI components.
 
 * Location Search Module
     * Allow a user to search for their location with the Location Search API
@@ -78,10 +79,14 @@ These modules are the UI components that will make up your website or page. You 
 * Weather Icon Module
     * For the Current Conditions as well as the Hourly & Daily Forecast modules, there is an associated Icon, or IconCode property that aligns with a numbered icon in the icon set found below
     * You can use the www.accuweather.com icons for this
-    * If possible, use a [Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/authoring?view=aspnetcore-5.0) for this
+    * If possible, use a [Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/authoring?view=aspnetcore-6.0) for this
+
+## Template Project
+
+This project is provided to you to use as a baseline for accessing AccuWeather data
 
 ## Delivery Requirements
 
 All source code and project files should be made accessible either through a public Git repository. The application should be self-contained and able to be executed by pulling down the source code, building, and executing through the dotnet SDK.
 
-Provide a link to the public Git repository and any non-documented runtime instructions to ryan.krinjeck@accuweather.com and joshua.mellott@accuweather.com.
+Provide a link to the public Git repository and any undocumented runtime instructions to ryan.krinjeck@accuweather.com and joshua.mellott@accuweather.com.
