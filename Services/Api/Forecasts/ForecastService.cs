@@ -12,12 +12,12 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Forecasts
 			_ApiService = apiService;
 		}
 
-		public Task<DailyForecastSummary> GetDailyForecastAsync(string locationKey)
+		public Task<DailyForecastSummary?> GetDailyForecastAsync(string locationKey)
 		{
 			return _ApiService.GetAccuWeatherApiAsync<DailyForecastSummary>($"/forecasts/v1/daily/5day/{locationKey}");
 		}
 
-		public Task<HourlyForecast[]> GetHourlyForecastAsync(string locationKey)
+		public Task<HourlyForecast[]?> GetHourlyForecastAsync(string locationKey)
 		{
 			return _ApiService.GetAccuWeatherApiAsync<HourlyForecast[]>($"/forecasts/v1/hourly/12hour/{locationKey}");
 		}

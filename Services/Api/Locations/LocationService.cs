@@ -12,14 +12,14 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Locations
 			_ApiService = apiService;
 		}
 
-		public Task<Location> GetLocationAsync(string key)
+		public Task<Location?> GetLocationAsync(string key)
 		{
 			return _ApiService.GetAccuWeatherApiAsync<Location>($"/locations/v1/{key}");
 		}
 
-		public Task<List<Location>> SearchLocationsAsync(string searchTerm)
+		public Task<Location[]?> SearchLocationsAsync(string searchTerm)
 		{
-			return _ApiService.GetAccuWeatherApiAsync<List<Location>>("/locations/v1/search", ("q", searchTerm));
+			return _ApiService.GetAccuWeatherApiAsync<Location[]>("/locations/v1/search", ("q", searchTerm));
 		}
 	}
 }

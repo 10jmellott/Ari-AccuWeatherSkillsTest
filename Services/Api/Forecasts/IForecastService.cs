@@ -9,13 +9,13 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Forecasts
 		/// </summary>
 		/// <param name="locationKey">Key property from a Location object</param>
 		/// <returns>List of daily forecasts, or null on failure</returns>
-		Task<DailyForecastSummary> GetDailyForecastAsync(string locationKey);
+		Task<DailyForecastSummary?> GetDailyForecastAsync(string locationKey);
 
 		/// <summary>
 		/// Gets the next 12 hours of hourly forecasts for the provided location
 		/// </summary>
 		/// <param name="locationKey">Key property from a Location object</param>
 		/// <returns>List of hourly forecasts, or an empty array on failure</returns>
-		Task<HourlyForecast[]> GetHourlyForecastAsync(string locationKey);
+		Task<HourlyForecast[]?> GetHourlyForecastAsync(string locationKey);
 	}
 }

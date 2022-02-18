@@ -1,8 +1,20 @@
+using AccuWeather.Web.SkillsTest.Services.Api.Alerts;
+using AccuWeather.Web.SkillsTest.Services.Api.Core;
+using AccuWeather.Web.SkillsTest.Services.Api.CurrentConditions;
+using AccuWeather.Web.SkillsTest.Services.Api.Forecasts;
+using AccuWeather.Web.SkillsTest.Services.Api.Locations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
+
+builder.Services.AddSingleton<IAccuWeatherApiService, AccuWeatherApiService>();
+builder.Services.AddSingleton<ILocationService, LocationService>();
+builder.Services.AddSingleton<IAlertsService, AlertsService>();
+builder.Services.AddSingleton<ICurrentConditionsService, CurrentConditionsService>();
+builder.Services.AddSingleton<IForecastService, ForecastService>();
 
 var app = builder.Build();
 

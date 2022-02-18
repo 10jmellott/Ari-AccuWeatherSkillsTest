@@ -10,6 +10,6 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Core
 		/// <param name="path">The PATH of the URL</param>
 		/// <param name="queries">The QUERY parameters (if any) of the URL</param>
 		/// <returns></returns>
-		Task<T> GetAccuWeatherApiAsync<T>(string path, params (string key, string value)[] queries);
+		Task<T?> GetAccuWeatherApiAsync<T>(string path, params (string key, string value)[] queries);
 	}
 }

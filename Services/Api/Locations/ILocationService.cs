@@ -11,7 +11,7 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Locations
 		/// </summary>
 		/// <param name="key">Value from a Location.Key</param>
 		/// <returns>Location if key matches an AccuWeather location, null otherwise</returns>
-		Task<Location> GetLocationAsync(string key);
+		Task<Location?> GetLocationAsync(string key);
 
 		/// <summary>
 		/// Gets a list of locations that match the search term. Note that the search term
@@ -20,6 +20,6 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Locations
 		/// </summary>
 		/// <param name="searchTerm">Search term you want to see locations for</param>
 		/// <returns>List of locations matching the search term, or an empty list</returns>
-		Task<List<Location>> SearchLocationsAsync(string searchTerm);
+		Task<Location[]?> SearchLocationsAsync(string searchTerm);
 	}
 }

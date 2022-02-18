@@ -12,7 +12,7 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Alerts
 			_ApiService = apiService;
 		}
 
-		public Task<WeatherAlert[]> GetAlertsAsync(string locationKey)
+		public Task<WeatherAlert[]?> GetAlertsAsync(string locationKey)
 		{
 			return _ApiService.GetAccuWeatherApiAsync<WeatherAlert[]>($"/alerts/v1/{locationKey}");
 		}
