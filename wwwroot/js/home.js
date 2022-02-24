@@ -1,3 +1,4 @@
 
-import MyComponent from './components/my-component.js';
-Vue.createApp(MyComponent).mount('#app');
+import * as Vue from 'vue';
+import App from './components/app.vue';
+Vue.createApp(App).mount('#app');

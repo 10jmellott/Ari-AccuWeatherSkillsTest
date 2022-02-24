@@ -11,3 +11,53 @@ html, body {
 	font-display: auto;
 	font-family: 'Solis', Arial, Helvetica, sans-serif;
 }
+
+.layout-header {
+	position: fixed;
+	top:0;
+	width: 100%;
+}
+.layout-main {
+	margin-top: 50px;
+}
+.location {
+	margin:auto;
+	width: 30%;
+	font-size: 2.5rem;
+	text-align: center;
+}
+.current-conditions {
+	margin:auto;
+	width: 20%;
+	font-size: 1.5rem;
+	border-radius: 10px;
+	background-color: #000;
+	opacity: .7;
+	color: white;
+	padding: 5px;
+	text-align: center;
+	margin-bottom: .5rem;
+}
+.current-conditions:hover {
+	background-color: #12121a;
+	opacity: 1;
+}
+.weather-icon {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+}
+@media (max-width: 320px) {	
+	.location {
+		width: 70%;
+		font-size: 2rem;
+	}
+	.current-conditions {
+		width: 70%;
+		font-size: 1rem;
+	}
+	.weather-icon {
+		width: 20px;
+		height: 20px;
+	}
+}

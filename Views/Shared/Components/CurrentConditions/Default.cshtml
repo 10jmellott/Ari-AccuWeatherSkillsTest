@@ -1,0 +1,9 @@
+@model AccuWeather.Web.SkillsTest.Models.Data.CurrentConditions.WeatherObservation
+@{
+	var imagePath = @Model.WeatherIcon + ".svg";
+}
+@{if(@Model.Temperature != null) {
+	<h5 class="current-conditions">
+		@Model.Temperature?.Imperial?.Value° @Model.Temperature?.Imperial?.Unit / @Model.Temperature?.Metric?.Value° @Model.Temperature?.Metric?.Unit , @Model.WeatherText <img src="~/images/weather-icons/@imagePath" alt="@Model.WeatherText" class="weather-icon">
+	</h5>
+}}

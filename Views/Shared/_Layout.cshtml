@@ -10,21 +10,19 @@
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/AccuWeather.Web.SkillsTest.styles.css" asp-append-version="true" />
 
-	@* Vue 3 Setup - Feel free to change *@
-	<script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-	<header>
+	<header class="layout-header">
 		@* TODO: Build header UI *@
-		<accuweather-logo width="404" />
+		<accuweather-logo width="168" />
 	</header>
-	<main>
+	<main class="layout-main">
 		@RenderBody()
 	</main>
 	<footer>
 		@* TODO: Build footer UI *@
 	</footer>
-	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/dist/main.js" asp-append-version="true"></script>
 	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
