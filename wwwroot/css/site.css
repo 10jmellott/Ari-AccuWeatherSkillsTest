@@ -102,6 +102,10 @@ body {
 .daily-forecast-headline {
 	font-weight: bold;
 }
+.daily-forecast {
+	flex-flow: column;
+	line-height: 1.5rem;
+}
 .forecast-item {
 	display: flex;
 	flex-flow: row;
@@ -125,9 +129,6 @@ body {
 	}
 	.forecast {
 		width: 80%;
-	}
-	.daily-forecast {
-		flex-flow: column;
 	}
 }
 

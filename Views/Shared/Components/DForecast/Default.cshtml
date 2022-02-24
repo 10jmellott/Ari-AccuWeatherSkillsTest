@@ -13,7 +13,7 @@
 					<div class="daily-forecast">
 						<div class="forecast-item">
 							@Model.DailyForecasts[i].Date.DateTime.ToString("dddd MMM dd") -
-							@Model.DailyForecasts[i].Day.IconPhrase <img src="~/images/weather-icons/@{ @Model.DailyForecasts[i].Day.Icon }.svg" alt="@Model.DailyForecasts[i].Day.IconPhrase" class="weather-icon">
+							@Model.DailyForecasts[i].Day.IconPhrase &nbsp; <img src="~/images/weather-icons/@{ @Model.DailyForecasts[i].Day.Icon }.svg" alt="@Model.DailyForecasts[i].Day.IconPhrase" class="weather-icon">
 						</div>
 						<div class="forecast-item">
 							Min: @Model.DailyForecasts[i].Temperature?.Minimum?.Value° @Model.DailyForecasts[i].Temperature?.Minimum?.Unit
