@@ -26,38 +26,10 @@ public class HomeController : Controller
 		return View();
 	}
 
-	[HttpGet("/hello")]
-	public IActionResult Hello()
-	{
-		var loc = HttpContext.Request.Cookies.Count();
-		_logger.LogInformation("from home" + loc);
-		return Ok("Hello");
-	}
-
 	[HttpGet("/searchlocation")]
 	public async Task<IActionResult> SearchLocation(string key)
 	{
 		var location = await _LocationService.SearchLocationsAsync(key);
 		return Ok(location);
-	}
-
-	[HttpGet("/alerts")]
-	public async Task<IActionResult> GetAlerts(string key)
-	{
-		var alerts = await _AlertsService.GetAlertsAsync(key);
-		return Ok(alerts);
-	}
-
-	[HttpGet("/hourlyforecast")]
-	public async Task<IActionResult> GetHourlyForecast(string key)
-	{
-		var hourly = await _ForecastService.GetHourlyForecastAsync(key);
-		return Ok(hourly);
-	}
-	[HttpGet("/dailyforecast")]
-	public async Task<IActionResult> GetDailyForecast(string key)
-	{
-		var daily = await _ForecastService.GetDailyForecastAsync(key);
-		return Ok(daily);
 	}
 }
