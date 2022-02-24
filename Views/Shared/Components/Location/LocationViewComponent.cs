@@ -8,14 +8,11 @@ namespace AccuWeather.Web.SkillsTest.Views.Shared.Components.Location
 	{
 		private readonly ILocationService _LocationService;
 		private readonly ICurrentConditionsService _CurrentConditionsService;
-		private readonly ILogger<LocationViewComponent> _logger;
 
-		public LocationViewComponent(ILocationService locationService, ICurrentConditionsService currentConditionsService, ILogger<LocationViewComponent> logger)
+		public LocationViewComponent(ILocationService locationService, ICurrentConditionsService currentConditionsService)
 		{
 			_LocationService = locationService;
 			_CurrentConditionsService = currentConditionsService;
-			_logger = logger;
-
 		}
 
 		public async Task<IViewComponentResult> InvokeAsync(string? text = null)

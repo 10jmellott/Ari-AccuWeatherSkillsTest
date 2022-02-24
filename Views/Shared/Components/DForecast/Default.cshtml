@@ -1,0 +1,35 @@
+@model AccuWeather.Web.SkillsTest.Models.Data.Forecasts.DailyForecastSummary
+
+<div class="forecast collapsed" onclick="toggleCollapse(this)">
+@{
+	if(@Model.DailyForecasts.Length > 0)
+	{
+		<h2 class="forecast-title">Forecast for the next @Model.DailyForecasts.Length days <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M10 .969L9.037 0 5 4.063.963 0 0 .969 5 6z"></path></svg></h2>
+		<div class="forecast-container">
+			<h3 class="daily-forecast-headline">@Model.Headline?.Text</h3>
+			@{
+				for (int i = 0; i < @Model.DailyForecasts.Length; i++)
+				{
+					<div class="daily-forecast">
+						<div class="forecast-item">
+							@Model.DailyForecasts[i].Date.DateTime.ToString("dddd MMM dd") -
+							@Model.DailyForecasts[i].Day.IconPhrase <img src="~/images/weather-icons/@{ @Model.DailyForecasts[i].Day.Icon }.svg" alt="@Model.DailyForecasts[i].Day.IconPhrase" class="weather-icon">
+						</div>
+						<div class="forecast-item">
+							Min: @Model.DailyForecasts[i].Temperature?.Minimum?.Value° @Model.DailyForecasts[i].Temperature?.Minimum?.Unit
+							| Max: @Model.DailyForecasts[i].Temperature?.Maximum?.Value° @Model.DailyForecasts[i].Temperature?.Maximum?.Unit
+						</div>
+						<div class="forecast-item">
+							<vc:d-precipitation half-day-forecast=@Model.DailyForecasts[i].Day label="day"/>
+						</div>
+						<div class="forecast-item">
+							<vc:d-precipitation half-day-forecast=@Model.DailyForecasts[i].Night label="night"/>
+						</div>
+
+					</div>
+				}
+			}
+		</div>
+	}
+}
+</div>

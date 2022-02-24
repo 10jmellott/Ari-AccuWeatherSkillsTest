@@ -1,0 +1,31 @@
+@model AccuWeather.Web.SkillsTest.Models.Data.Forecasts.HourlyForecast[]
+
+<div class="forecast collapsed" onclick="toggleCollapse(this)">
+@{
+	if(@Model.Length > 0)
+	{
+		<h2 class="forecast-title">Forecast for the next @Model.Length hours <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M10 .969L9.037 0 5 4.063.963 0 0 .969 5 6z"></path></svg></h2>
+		<div class="forecast-container">
+			@{
+				for (int i = 0; i < @Model.Length; i++)
+				{
+					<div class="hourly-forecast">
+						@Model[i].DateTime.ToString("hh:mm tt")
+						@Model[i].IconPhrase <img src="~/images/weather-icons/@{ @Model[i].WeatherIcon }.svg" alt="@Model[i].IconPhrase" class="weather-icon">
+						@Model[i].Temperature?.Value° @Model[i].Temperature?.Unit
+						@{
+							if(@Model[i].HasPrecipitation)
+							{
+								<div>
+									&nbsp;| Chance of @Model[i].PrecipitationType: @Model[i].PrecipitationProbability% |
+									@Model[i].PrecipitationType Intensity: @Model[i].PrecipitationIntensity
+								</div>
+							}
+						}
+					</div>
+				}
+			}
+		</div>
+	}
+}
+</div>

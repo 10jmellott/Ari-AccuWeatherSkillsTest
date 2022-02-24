@@ -38,15 +38,6 @@ import axios from "axios";
 				this.setCookie('location', location.key);
 				window.location.reload(); //far from "graceful" but it's one way to update C# viewcomponents
 			},
-			getCookies() {//gets cookies and formats them into an object so we can access it like a hashmap
-				return document.cookie.length > 0 ? document.cookie.split(';').reduce((cookies_list, cookie) => {
-					let [key,value] = cookie.split('=');
-					if(!!key) {
-						cookies_list[key] = value;
-					}
-					return cookies_list;
-				}, {}) : {};
-			},
 			setCookie(name, value) {
 				let cookie_max_age = 30 * 24 * 60 * 60 * 1000; //setting max age to be 30 days
 				document.cookie= name + '=' + value + ';max-age=' + cookie_max_age + ';path=/';
@@ -63,9 +54,12 @@ import axios from "axios";
 	font-weight: bold;
 	display: flex;
 	flex-flow: column;
+	height: 3rem;
+	overflow: visible;
 }
 .location-search-box {
 	border: solid 1px #cfcfcf;
+	background-color: white;
 	width:100%;
 	padding: 10px;
 	border-radius: 5px;
@@ -80,10 +74,12 @@ import axios from "axios";
 .location-list {
 	padding: 0 5%;
 	border: solid 1px #cfcfcf;
+	background-color: white;
 	border-top: none;
 	list-style: none;
 	display: flex;
 	flex-flow: column;
+	z-index: 999;
 }
 .location-list li {
 	cursor: pointer;
@@ -98,7 +94,12 @@ import axios from "axios";
 	fill: #1e1e1e;
 	opacity: .6;
 }
-@media (max-width: 320px) {
+@media (max-width: 900px) {
+	.location-search-container {
+		width: 60%;
+	}
+}
+@media (max-width: 480px) {
 	.location-search-container {
 		width: 80%;
 	}

@@ -1,0 +1,12 @@
+@model AccuWeather.Web.SkillsTest.Models.Data.Alerts.WeatherAlert[]
+
+@{if(@Model.Length > 0) {
+	<h5 class="weather-alerts">
+		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22">
+			<path fill="#FFF" d="M13.273.438L24.87 19.766c.36.6-.072 1.366-.773 1.366H.903c-.7 0-1.134-.765-.773-1.366L11.727.438c.35-.584 1.196-.584 1.546 0zm.129 14.638h-1.804v2.577h1.804v-2.577zm0-7.731h-1.804v6.442h1.804V7.345z" transform="translate(0 -8) translate(0 8)"></path>
+		</svg>
+		@Model[0].Area[0].Summary
+	</h5>
+}
+else
+{}}

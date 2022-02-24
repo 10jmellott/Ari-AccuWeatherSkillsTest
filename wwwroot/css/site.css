@@ -11,6 +11,9 @@ html, body {
 	font-display: auto;
 	font-family: 'Solis', Arial, Helvetica, sans-serif;
 }
+body {
+	background-color: #ebebeb;
+}
 
 .layout-header {
 	position: fixed;
@@ -28,7 +31,7 @@ html, body {
 }
 .current-conditions {
 	margin:auto;
-	width: 20%;
+	width: 25%;
 	font-size: 1.5rem;
 	border-radius: 10px;
 	background-color: #000;
@@ -47,7 +50,66 @@ html, body {
 	height: 40px;
 	vertical-align: middle;
 }
-@media (max-width: 320px) {	
+.weather-alerts {
+	margin: 1rem auto;
+	width: 50%;
+	height: 40px;
+	font-size: 1.2rem;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	background-color: #af0a0a;
+	color: white;
+}
+.forecast {
+	display: flex;
+	flex-flow: column;
+	width: 50%;
+	margin: 1rem auto;
+	background-color: white;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.forecast.collapsed .forecast-container {
+	display: none;
+}
+.forecast .forecast-title {
+	font-size: 2.5rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 10px;
+}
+.forecast.collapsed .chevron {
+	transform: rotate(0deg);
+	transition: .2s;
+}
+.forecast .chevron {
+	margin-left: auto;
+	margin-right: 0.5rem;
+	transform: rotate(180deg);
+	transition: .2s;
+}
+.hourly-forecast, .daily-forecast {
+	display: flex;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+	align-items: center;
+	padding: 4px;
+}
+.daily-forecast-headline {
+	font-weight: bold;
+}
+.forecast-item {
+	display: flex;
+	flex-flow: row;
+	width: 100%;
+	align-items: center;
+}
+
+@media (max-width: 900px) {	
 	.location {
 		width: 70%;
 		font-size: 2rem;
@@ -56,8 +118,34 @@ html, body {
 		width: 70%;
 		font-size: 1rem;
 	}
+	.weather-alerts {
+		width: 80%;
+		height: 60px;
+		font-size: 1rem;
+	}
+	.forecast {
+		width: 80%;
+	}
+	.daily-forecast {
+		flex-flow: column;
+	}
+}
+
+@media (max-width: 480px) {	
+	.location {
+		width: 70%;
+		font-size: 2rem;
+	}
 	.weather-icon {
 		width: 20px;
 		height: 20px;
+	}
+	.weather-alerts {
+		width: 100%;
+		height: 60px;
+		font-size: 1rem;
+	}
+	.forecast {
+		width: 100%;
 	}
 }
