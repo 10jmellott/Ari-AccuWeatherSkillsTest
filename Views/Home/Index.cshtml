@@ -3,10 +3,11 @@
 }
 
 @* TODO: Insert View Components Here *@
-<vc:placeholder text="Placeholder" />
+<vc:location text="" />
+<vc:current-conditions/>
 
 <div id="app"></div>
 
-@section Scripts {
-	<script src="~/js/home.js" asp-append-version="true" type="module"></script>
-}
+<vc:weather-alerts/>
+<vc:h-forecast/>
+<vc:d-forecast/>

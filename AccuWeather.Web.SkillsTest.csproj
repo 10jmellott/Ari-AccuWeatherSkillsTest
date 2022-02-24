@@ -1,9 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-	</PropertyGroup>
-
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\dist\**" Watch="false"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Polly" Version="7.2.3"/>
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="2.1.0" />
+  </ItemGroup>
+  <Target Name="NpmInstall">
+    <Exec Command="npm install" Condition="$(RestorePackagesWithLockFile) != 'true'"/>
+  </Target>
+  <Target Name="NpmRunBuild" DependsOnTargets="NpmInstall" BeforeTargets="BeforeBuild">
+    <Exec Command="npm run build"/>
+  </Target>
 </Project>

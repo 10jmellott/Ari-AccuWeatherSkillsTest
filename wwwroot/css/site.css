@@ -11,3 +11,142 @@ html, body {
 	font-display: auto;
 	font-family: 'Solis', Arial, Helvetica, sans-serif;
 }
+body {
+	background-color: #ebebeb;
+}
+
+.layout-header {
+	position: fixed;
+	top:0;
+	width: 100%;
+}
+.layout-main {
+	margin-top: 50px;
+}
+.location {
+	margin:auto;
+	width: 30%;
+	font-size: 2.5rem;
+	text-align: center;
+}
+.current-conditions {
+	margin:auto;
+	width: 25%;
+	font-size: 1.5rem;
+	border-radius: 10px;
+	background-color: #000;
+	opacity: .7;
+	color: white;
+	padding: 5px;
+	text-align: center;
+	margin-bottom: .5rem;
+}
+.current-conditions:hover {
+	background-color: #12121a;
+	opacity: 1;
+}
+.weather-icon {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+}
+.weather-alerts {
+	margin: 1rem auto;
+	width: 50%;
+	height: 40px;
+	font-size: 1.2rem;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	background-color: #af0a0a;
+	color: white;
+}
+.forecast {
+	display: flex;
+	flex-flow: column;
+	width: 50%;
+	margin: 1rem auto;
+	background-color: white;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.forecast.collapsed .forecast-container {
+	display: none;
+}
+.forecast .forecast-title {
+	font-size: 2.5rem;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 10px;
+}
+.forecast.collapsed .chevron {
+	transform: rotate(0deg);
+	transition: .2s;
+}
+.forecast .chevron {
+	margin-left: auto;
+	margin-right: 0.5rem;
+	transform: rotate(180deg);
+	transition: .2s;
+}
+.hourly-forecast, .daily-forecast {
+	display: flex;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+	align-items: center;
+	padding: 4px;
+}
+.daily-forecast-headline {
+	font-weight: bold;
+}
+.daily-forecast {
+	flex-flow: column;
+	line-height: 1.5rem;
+}
+.forecast-item {
+	display: flex;
+	flex-flow: row;
+	width: 100%;
+	align-items: center;
+}
+
+@media (max-width: 900px) {	
+	.location {
+		width: 70%;
+		font-size: 2rem;
+	}
+	.current-conditions {
+		width: 70%;
+		font-size: 1rem;
+	}
+	.weather-alerts {
+		width: 80%;
+		height: 60px;
+		font-size: 1rem;
+	}
+	.forecast {
+		width: 80%;
+	}
+}
+
+@media (max-width: 480px) {	
+	.location {
+		width: 70%;
+		font-size: 2rem;
+	}
+	.weather-icon {
+		width: 20px;
+		height: 20px;
+	}
+	.weather-alerts {
+		width: 100%;
+		height: 60px;
+		font-size: 1rem;
+	}
+	.forecast {
+		width: 100%;
+	}
+}

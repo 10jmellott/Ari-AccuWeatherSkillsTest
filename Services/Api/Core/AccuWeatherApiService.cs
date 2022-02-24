@@ -1,4 +1,7 @@
 using System.Text.Json;
+using Polly;
+using Polly.Retry;
+using Microsoft.Extensions.Http;
 
 namespace AccuWeather.Web.SkillsTest.Services.Api.Core
 {
@@ -9,10 +12,13 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Core
 		private readonly IHttpClientFactory _HttpClientFactory;
 		private readonly ILogger<AccuWeatherApiService> _Logger;
 
+		private readonly AsyncRetryPolicy<HttpResponseMessage> _RetryPolicy;
+
 		public AccuWeatherApiService(IHttpClientFactory httpClientFactory, IConfiguration configuration, ILogger<AccuWeatherApiService> logger)
 		{
 			_HttpClientFactory = httpClientFactory;
 			_Logger = logger;
+			_RetryPolicy = Policy<HttpResponseMessage>.Handle<HttpRequestException>().RetryAsync(3);
 
 			_Host = configuration["AccuWeather:Host"];
 			var apiKey = configuration["AccuWeather:Key"];
@@ -25,7 +31,6 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Core
 
 		public async Task<T?> GetAccuWeatherApiAsync<T>(string path, params (string key, string value)[] queries)
 		{
-			// TODO: Make API calls robust against failure
 			using (var client = _HttpClientFactory.CreateClient())
 			{
 				// Create the URL
@@ -34,8 +39,11 @@ namespace AccuWeather.Web.SkillsTest.Services.Api.Core
 				var queryString = string.Join("&", queries.Select(param => $"{param.key}={param.value}"));
 				if (!string.IsNullOrWhiteSpace(queryString)) url += $"?{queryString}";
 
-				// Make the request
-				var response = await client.GetAsync(url);
+				// Make the request up to 3 times by using retry policy
+				var response = await _RetryPolicy.ExecuteAsync(async () => {
+					return await client.GetAsync(url);
+				});
+
 				if (response.IsSuccessStatusCode)
 				{
 					var stream = await response.Content.ReadAsStreamAsync();

@@ -1,0 +1,10 @@
+@model Tuple<AccuWeather.Web.SkillsTest.Models.Data.Forecasts.HalfDayForecast, string>
+
+@{
+	if(@Model.Item1.HasPrecipitation)
+	{
+		<div>
+			@Model.Item1.PrecipitationIntensity @Model.Item1.PrecipitationType during the @Model.Item2
+		</div>
+	}
+}

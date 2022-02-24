@@ -90,3 +90,18 @@ This project is provided to you to use as a baseline for accessing AccuWeather d
 All source code and project files should be made accessible either through a public Git repository. The application should be self-contained and able to be executed by pulling down the source code, building, and executing through the dotnet SDK.
 
 Provide a link to the public Git repository and any undocumented runtime instructions to ryan.krinjeck@accuweather.com and joshua.mellott@accuweather.com.
+
+## Running requirements
+
+Make sure you have the following installed before trying to build the application:
+* [.Net Core 6](https://dotnet.microsoft.com/en-us/download)
+* [NodeJS 16(LTS) with npm 8 (packaged with NodeJS)](https://nodejs.org/en/download/)
+
+Paste the provided API key into `appsettings.json` where it says `ADD_KEY_HERE`
+
+## Running instructions
+
+To run the application, open it on Visual Studio Code and press Ctrl+F5 (or F5 to run on debug mode)
+Alternatively you can run it by typing `dotnet run` on your command line of choice
+
+After running it, you'll be able to see it on your browser by accessing either [https://localhost:7298](https://localhost:7298) or [http://localhost:5058](http://localhost:5058)
